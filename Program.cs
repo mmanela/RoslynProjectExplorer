@@ -22,6 +22,7 @@ class Program
         using (var workspace = MSBuildWorkspace.Create())
         { 
             // Add a trace listener to capture logs
+            Trace.Listeners.RemoveAt(0);
             Trace.Listeners.Add(new ConsoleTraceListener());
 
             // Curious if this will reveal the issues on projects not being analyzed
